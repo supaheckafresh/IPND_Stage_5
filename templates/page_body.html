@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/ipnd_notes_style.css">
+		<title>Udacity Intro to Programming Nanodegree - Course Notes by Neil Strain</title>
+		<meta charset="UTF-8">
+		<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>	
+	</head>
+	<body class="page_defaults">
+		<div>
+			<h1 class="course_title_h1">Stage 1: Webpages, Documents, and Structure</h1>
+		</div>
+	<br/> 
+			<div class="lesson">
+	 		 	<h1>Lesson 1.1: The Basics of the Web and HTML</h1>
+				<div class="topic">
+		 		 	<h2>What is the Internet?</h2>
+					<p>The internet is a vast collection of webpages (in the tens-of-billions),
+					which are text documents most commonly of type HTML, interconnected via &quot;hyperlinks.&quot;</p>
+				</div>
+				<div class="topic">
+				  	<h2>How Does it Work?</h2>
+					<p>To describe the internet in very broad terms: a <em>web browser</em> (a computer program for viewing webpages) requests an HTML file contained on the <em>web</em> (essentially the entirety of all servers and computers connected to the internet), via a protocol called <em>HTTP</em> (Hyper Text Transport Protocol), from the <em>server</em> (a computer optimized for hosting HTML documents and other files) on which the requested HTML file resides.The server in turn responds by sending the requested HTML file, also via HTTP and the web, to the web browser.</p>
+				</div>
+				<div class="topic">
+				  	<h2>What is HTML?</h2>
+					<p>HTML, short for &quot;Hyper Text Markup Language,&quot; is a filetype as well as a computer programming language containing text, and &quot;markups&quot; which web browser applications interpret as instructions for how to display content. For example, if a certain text phrase will appear in bold type, or where in the browser window to display a block of text. HTML documents may also contain references to other files like images and videos, as well as references to other HTML webpages, referred to as links or &quot;hyperlinks.&quot; Links may in fact refer not only to other HTML files, but also to files of any other type.</p>
+				</div>
+			 	<div class="topic">
+				  	<h2>What are HTML Markups?</h2>
+					<p>HTML markups include tags, tag attributes, and container elements.</p>
+					<div class="sub_topic">
+						<h3>Tags</h3>
+						<p>Some examples of tags are <span class="inline_code">&lt;b></span> (<b>bold</b>), <span class="inline_code">&lt;em></span> (<i>emphasis:  italics</i>), <span class="inline_code">&lt;br></span> (line break), and <span class="inline_code">&lt;p></span> (paragraph). Certain tags are intended for altering font characteristics or formatting text; in such cases, an opening tag <span class="inline_code">&lt;TAG></span> and a closing  tag <span class="inline_code">&lt;/TAG></span>  will encapsulate the text content to which such font and formatting constraints should be applied. Another example of a tag which alters then properties of enclosed text is the <span class="inline_code">&lt;a></span> (anchor) tag, which adds to text a &quot;hyperlink&quot; referring to another HTML file or other document. Text content contained within an anchor element becomes &quot;clickable&quot; when displayed by a web browser -- when that text is selected or left-clicked by a mouse, the web browser in turn will attempt to display the webpage or other file referenced by the hyperlink.</p>
+					 </div>
+					 <div class="sub_topic">
+						<h3>Void Tags</h3>
+						<p>In cases where tags are intended for a use other than altering font or  formatting properties of any proceeding text content, as is the case with the <span class="inline_code">&lt;img></span> (image) and <span class="inline_code">&lt;br></span> (line break) tags, a closing  tag may be unnecessary -- tags of this sort are called &quot;void tags.&quot;</p>
+					 </div>
+					 <div class="sub_topic">
+						<h3>Elements</h3>
+						<p>An &quot;element&quot; refers to the HTML structure encompassing an opening tag, as well as any enclosed content and a closing tag (unless these two components are unnecessary, as with void tags). It should be noted that an element may contain any number of interior nested elements (i.e. &quot;nested tags&quot;).</p>
+					 </div>
+					 <div class="sub_topic">
+						<h3>Attributes</h3>
+						<p>A programmer may be able to further specify the properties and behaviors of certain tags via their attributes, as is true with the anchor tag:</p> 
+							<pre>
+<span class="inline_code"><code>&lt;a href:&quot;www.google.com&quot;>click here to go to Google.com&lt;/a></code></span>
+							</pre>
+						<p>Where &quot;href:&quot; is an attribute of the anchor tag, and &quot;www.google.com&quot; is the specified value of that attribute.</p>
+					 </div>
+					 <div class="sub_topic">
+						<h3>Container Elements</h3>
+						<p>Container elements, which include <span class="inline_code">&lt;span></span> and <span class="inline_code">&lt;div></span> can be used as containers for text or other HTML content, which may also affect how the contained content will display in a web browser.</p>
+					 </div>
+					 <div class="sub_topic">
+						<h3>Inline and Block Elements</h3>
+						<p>Both tags and container elements are categorized as either &quot;inline&quot; or &quot;block,&quot; describing their behavior either as affecting HTML content only within a single line (&quot;inline&quot;), or as effectively creating an &quot;invisible box&quot; (whose height and width may be defined) around the content enclosed within the opening and closing tags (&quot;block&quot;). Inline elements include <span class="inline_code">&lt;b></span> , <span class="inline_code">&lt;em></span> , <span class="inline_code">&lt;img></span> , <span class="inline_code">&lt;br></span> , and <span class="inline_code">&lt;span></span>. Block elements include <span class="inline_code">&lt;p></span> and <span class="inline_code">&lt;div></span>.</p>
+					 </div>
+				</div>
+			</div>
+		<br/><!-- spacer -->
+		  	<div class="lesson">
+			 	<h1>Lesson 1.2: Creating a Structured Document with HTML</h1>
+				<div class="topic">
+				  	<h2>What is CSS?</h2>
+					<p>CSS, short for &quot;Cascading Style Sheet,&quot; is a programming language, complete with it&apos;s own syntax and rules, which is intended for controlling the visual style of a webpage. A CSS document may contain style parameters like font-size, font-color, border-width, background images, etc.</p>
+					<p>CSS is a powerful tool: one can simply change the CSS for a webpage and dramatically alter the way that page looks, without ever touching the HTML code.</p>
+				</div>
+				<div class="topic">
+				  	<h2>How does CSS work with HTML?</h2>
+					<p>By assigning class names to an HTML element (i.e. within an opening HTML tag, by adding the attribute &quot;class&quot; with an appropriate class name as its value) a web browser is provided with instructions for which CSS styles to use for that element. The value (the class name) of the class attribute on the HTML document refers to a CSS class of the same name located on a separate CSS document.</p>
+					<p>House Analogy for a Webpage:</p>
+					<ol class="list_bullets">
+						<li>HTML - structure of the house, layout of the rooms.</li>
+						<li>CSS - decorations, window blinds, molding, wall colors.</li>
+						<li>Javascript - interactive elements like garage door opener, air conditioner, doorbell.</li>
+					</ol>
+				</div>
+				<div class="topic">
+				  	<h2>The DOM - a Rudimentary Introduction</h2>
+					<p>DOM, short for &quot;Document Object Model,&quot; is a standard convention which specifies how web browsers should translate the elements in an HTML text document into elements in a tree-like structure. The HTML structure displayed in Chrome Developer Tools is in essence a visual representation (in a form closely resembling an HTML document) of the DOM for a webpage.</p>
+					<p>I read elsewhere, including on the W3C (World Wide Web Consortium) website, that the DOM is an &quot;API&quot; (Application Programming Interface) -- if I understand correctly, the DOM can be thought of as a set of rules (in the form of a piece of code that a web browser understands) defining what web browser applications should do with HTML files.</p>
+					<p>The tree-like relationship of a page&apos;s HTML elements, or in other words the DOM of that page, can also represented as a block diagram:</p>
+					<span class="centered_content">
+						<span class="graphic">
+							<img src="images/blockdiagram.jpg" alt="block diagram">
+						</span>
+					</span>
+				</div>
+				<div class="topic">
+				  	<h2>Getting More Familiar with HTML and CSS</h2>
+					<div class="sub_topic">
+					 	<h3>Visualizing Code - Slicing Up an Existing Webpage</h3>
+						<p>It can be a useful exercise for a web developer to analyze the structure of an existing webpage by drawing rectangles, or &quot;boxes,&quot; around all of the page&apos;s visible contents. To go about this process in a more tactile way, one could even print the page and cut out the boxes with scissors.</p>
+						<p>The process is straightforward and should start with identifying the largest boxes, i.e. the largest box representing the entire page, and secondary boxes representing grouped elements: for instance, one might draw a single box around separate images that all appear to be aligned on a horizontal plane. Continue the process by whittling down to smaller and smaller boxes.</p>
+						<p>Going through this effort can give a programmer a general sense for what the HTML code for a page might look like (especially in terms of the structure of <span class="inline_code">&lt;div></span> and <span class="inline_code">&lt;img></span> elements, visible contents, and some CSS parameters). This also seems like it would be a very practical method for getting started on coding a new webpage from a graphical mockup.</p>
+					</div>
+					<div class="sub_topic">
+					  	<h3>Visualizing a Webpage - Exploring Chrome Developer Tools</h3>
+						<p>Chrome Developer Tools allows users to view HTML, CSS and Javascript code for any webpage (so far as I can tell), in split-screen format alongside or underneath the visible page. It should be noted that that the code displayed is not the actual code for the page, but the tree-like HTML structure of the page as Chrome interprets it (although it seems to me it could be very similar to the original code in many cases).</p>
+						<p>A couple of important points a programmer should consider when exploring the inner-workings of a page in this way:</p>
+						<ol class="list_numbers">
+							<li> <!-- 1 --> Not all of the elements in the HTML structure are visible on the page. Like the <span class="inline_code">&lt;head></span> element, for example.</li>
+							<li> <!-- 2 --> All of the elements are rectangular: &quot;everything on the web is boxes.&quot; This becomes apparent when one mouses-over a <span class="inline_code">&lt;div></span> element in the HTML tree, the related element on the page immediately gets a rectangular highlight.</li>
+							<li> <!-- 3 --> All of the text that is visible on the page can also be found in the HTML tree if one digs deep enough. This is done by clicking on the triangle icons to display hidden branches of the structure (and in many cases additional triangle icons indicating more branches yet).</li>
+						</ol>
+						<p>In addition to providing insight into the HTML structure of a page, Developer Tools also allows users to view CSS Styles for that page, including the ability to change attribute values and immediately see the results in the page frame.</p>
+					</div>
+				</div>
+				<div class="topic">
+				  	<h2>Use a Source Code Editor</h2>
+					<p>Although HTML and CSS are in fact plain text files which can be created and edited with a simple text editor like Windows Notepad, it is generally recommended that programmers use text editors specifically designed for computer programming. The code editor recommended in this course is Sublime Text 2, which features automatic coloration of different HTML components like tags and text content, as well as other visual aids like line numbers and indent guides. Using a code editor with such features can assist a programmer in writing programs which are both clean and comprehensible.</p>
+				</div>
+		  	</div>
+	  	<br/><!-- spacer -->
+	  		<div class="lesson">
+	  			<h1>Lesson 1.3: Adding CSS Style to HTML Structure</h1>
+	  			<div class="topic">
+	  				<h2>Avoiding Repetition</h2>
+	  				<p>CSS stands for &quot;Cascading Style Sheets.&quot; It is a programming language which allows programmers to avoid repetitive code, in large part through the use of classes. When several elements in an HTML document given the same class name, a single block of CSS code can apply to that entire group of elements. In this way, those elements will appear similarly-styled when displayed by a browser. In addition to classes, CSS rules can also be applied to standard HTML tags like <span class="inline_code">&lt;p></span> and <span class="inline_code">&lt;h1></span>.</p>
+	  			</div>
+		  		<div class="topic">
+		  			<h2>&quot;Cascading&quot; and Inheritance</h2>
+		  			<p>To describe what the &quot;Cascading&quot; in CSS means: CSS rules which apply to a specified element (ancestor) will &quot;cascade&quot; down (imagine a waterfall) and apply to nested elements (descendants), unless more specific CSS rules are defined for those nested elements. To think of this in a slightly different way: the more specific the CSS rule, the higher the precedence. The &quot;cascading&quot; behavior of CSS is yet another way in which the language reduces repetitive code, promotes faster page-loading, and lower development costs.</p>
+		  			<p>This ancestor-descendent behavior is also referred to as &quot;Inheritance.&quot; Inheritance generally applies to text-related properties, but not to box-related properties.</p>
+		  			<p>In addition to Inheritance, web browsers will also give precedence to CSS style rules in the following order with inline style code receiving the highest priority</p>
+		  			<ol class="list_numbers">
+  						<li> <!-- 1 --> Browser default style sheet</li> 
+  						<li> <!-- 2 --> External style sheet</li>
+  						<li> <!-- 3 --> Internal style sheet</li>
+  						<li> <!-- 4 --> Inline style code</li>
+				  	</ol>
+		  			<p>Regarding browser default styles: there are currently many differences in the default styles of the most popular web browsers, which obviously is a dilemma for web developers. There is a push within the programming community to rectify this situation by introducing a universal default style sheet.</p> 
+		  		</div>
+		  		<div class="topic">
+		  			<h2>Where to Write CSS Code</h2>
+		  			<p>When possible, a programmer should create an external CSS document in the same directory as its related HTML documents (or perhaps in another directory which can be accessed by the browser). Any HTML documents which will use the external CSS file should contain a <span class="inline_code">&lt;link></span> tag with the CSS filename (the <span class="inline_code">&lt;link></span> tag should be nested inside of the <span class="inline_code">&lt;head></span> element) ; this instructs the browser on where to find the external document containing all of the needed CSS code. This approach lends itself to clearer HTML code, and makes future style adjustments fairly easy.</p> 
+		  			<p>Alternatives to the above approach are internal style sheets (within the <span class="inline_code">&lt;head></span> of the HTML document), and inline style (by way of nesting CSS code within a <span class="inline_code">&lt;style></span> element). However, these methods should generally be avoided as they don’t offer as much benefit in terms of eliminating repetition compared with using external style sheets.</p> 
+		  		</div>
+		  		<div class="topic">
+		  			<h2>CSS Syntax Features</h2>
+	  				<p>Selectors specify which HTML elements on a page styles will be applied to. Examples could be a standard HTML tag like <span class="inline_code">&lt;p></span> or a user defined class name, in the form &quot;.descriptive_name&quot;</p> 
+	  				<p><em>Properties</em> are the stylistic (visual) attributes for which a <em>value</em> or rule can be declared. CSS property examples are &quot;font-weight&quot; and &quot;background-color,&quot; among what appear to be at least a couple hundred others. A property-value pair form a <em>declaration</em>.</p> 
+	  				<p>An important note for those programming in CSS (and in other languages): it is impossible and unnecessary to get wrapped up in memorizing all of the properties and possible values that make up the language before attempting to use it -- one should go ahead with programming in CSS and get comfortable with frequenting online documentation as needed. The CSS reference linked in this lesson: 
+	  					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">https://developer.mozilla.org/en-US/docs/Web/CSS/Reference</a>
+	  				</p> 
+	  			</div>
+		  		<div class="topic">
+		  			<h2>HTML Semantics</h2>
+	  				<p>It is best to use HTML tags which are semantically appropriate for the content contained within that element. That is to say, whenever possible, the chosen tag should have an intended use which is related to the content type -- like using <span class="inline_code">&lt;p></span> for a paragraph of text, or <span class="inline_code">&lt;h1></span> for a title, for instance.</p> 
+	  			</div>
+		  		<div class="topic">
+		  			<h2>The Box Model</h2>
+	  				<p>The Box Model, which as far as I can tell applies to basically every HTML element, block and inline alike, consists of four concentric rectangles:</p> 
+	  				<ol class="list_numbers">
+	  				  	<li> <!-- 1 --> In the center is the <em>content</em> area, generally used for text, images, or other contents which appear on the webpage.</li>
+	  				  	<li> <!-- 2 --> Surrounding the content, is the <em>padding</em> rectangle, which clears an area directly around the content and is affected by the background-color or background-image of the box.</li>
+	  				  	<li> <!-- 3 --> The <em>border</em> is the rectangular area which surrounds the content and padding.</li>
+	  				  	<li> <!-- 4 --> The <em>margin</em> clears a transparent area around the border. The margin can be thought of as the space between boxes.</li>
+		  			</ol>
+	  				<p>The total width an HTML box element will occupy on the screen is equal to the sum of the content, padding, and border widths; consequently, always having to keep the other two components in mind when making changes to one makes planning a page layout more challenging for developers.</p> 
+	  				<p>The relatively recent CSS rule &quot;border-sizing: border-box&quot; makes the calculation of element size much easier, by including the border and pattern sizes, which makes it easier to layout boxes on the page. Just set the size of the overall box.</p> 
+	  				<p>Box sizes can be set to a fixed number of pixels, or a percentage (in the case that they should automatically resize based on the size of the browser window); in the case of percentage sizes, boxes are often given a max-width attribute so that they can expand only up to a certain pixel width.</p> 
+	  			</div>
+		  		<div class="topic">
+		  			<h2>Positioning Boxes</h2>
+		  				<p>A good technique for distributing boxes horizontally within a <span class="inline_code">&lt;div></span> 
+		  					is to use the CSS Flexbox Layout module, most simply by adding the rule &quot;display: flex&quot; to a 
+		  					style sheet. For this method to work properly, the child elements need to be given a width smaller than
+		  					the default 100% (via the &quot;max-width&quot; CSS property). Flexbox can be used in this way to override 
+		  					the default vertical-based behavior of divs, where nested divs are typically laid out one on top of the 
+		  					other. Flexbox appears to offer an abundance of features for distributing, automatically resizing, and 
+		  					wrapping child elements within a container element in any number of ways (it&apos;s not just for 
+		  					distributing and aligning horizontally, as was demonstrated in the lesson).</p>
+		  		</div>
+		  		<div class="topic">
+		  			<h2>Browser Prefixes</h2>
+		  			<p>For some newer CSS properties like flexbox and &quot;border-sizing: border-box&quot; to work in certain browsers, it may be necessary to include what is called a &quot;browser prefix&quot; in the related CSS style declaration block which tells the browser to add support for that property. For example, flexbox is fully implemented and works by default in newer versions of Chrome and Firefox, but to get the feature to work in Safari one should add the following prefix to their CSS: &quot;display: -webkit-flex;&quot;.</p> 
+		  		</div>
+		  		<div class="topic">
+		  			<h2>Code, Test, Refine</h2>
+	  				<p>Work from big to small: when working from a design mock or some other form of instruction for coding a webpage, begin by identifying the boxes, then identify similar styles and semantic elements. Likewise, when beginning to code the page, start with the general layout of boxes (HTML) and then apply styles (CSS), fine-tuning from the biggest (or most general) style properties (like background-color, major box positioning adjustments, and title text) to smaller-and-smaller details (perhaps font-family, drop-shadow). By reviewing the updated page in a browser along the way, continue to fix things and fine-tune until the page styling appears as desired.</p> 
+	  				<p>In addition to viewing the updated page in a browser, Chrome Dev Tools allows a developer to test different attributes and values prior to updating the actual code.</p> 
+	  			</div>
+		  		<div class="topic">
+		  			<h2>Validate Your Code</h2>
+	  				<p>It&apos;s important to verify HTML and CSS in order to make sure that it is error-free and that it complies with browser standards.</p>
+	  				<ol class="list_bullets">
+	  					<li>To verify HTML: 
+	  						<a href="http://validator.w3.org/#validate_by_input">http://validator.w3.org/#validate_by_input</a>
+	  					</li>
+	  					<li>To verify CSS: 
+	  						<a href="http://jigsaw.w3.org/css-validator/#validate_by_input">http://jigsaw.w3.org/css-validator/#validate_by_input</a>
+	  					</li>
+	  				</ol>
+		  		</div>
+	  		</div>
+		<br/><!-- spacer -->
+	  	<div>
+			<h1 class="course_title_h1">Stage 2: Telling Computers What to Do</h1>
+		</div>
+	<br/> <!-- spacer -->
+		  	<div class="lesson">
+			    <h1>Lesson 2.1: Introduction to Serious Programming</h1>
+				<div class="topic">
+				    <h2>What is a Computer?</h2>
+					<p>A computer is a machine that can be “programmed.” So, we can think of computers as very fancy toasters (well, maybe not exactly…).</p>
+				</div>
+				<div class="topic">
+				    <h2>Computers are Stupid, yet Amazing</h2>
+					<p>Computers do exactly and only what we tell them to do. A computer without a program is less useful than a toaster. However, unlike a toaster, with good programming a computer can carry out any computations imaginable. Modern computers can do so at a rate of billions of instructions per second.</p>
+				</div>
+				<div class="topic">
+				    <h2>What is a Program?</h2>
+					<p>A program is a set of specific instructions (or sequence of steps) to be carried out by a computer.</p>
+				</div>
+				<div class="topic">
+				    <h2>What is Computer Science?</h2>
+					<p>Computer Science is the study of solving problems through computing. This involves breaking problems into smaller pieces, and then defining those constituents of the larger problem as sequence of precise steps which can be carried out by a computer (a computer program). Computer programming is central to computer science. However, these are distinct fields in that computer science also involves the theoretical foundations of problem solving through computing, as well as the theory of computation in general. Or perhaps rather than thinking of the fields as separate, we can think of computer programming as a branch of the broader field of computer science.</p>
+				</div>
+				<div class="topic">
+				    <h2>Programming Languages</h2>
+					<p>Programming languages provide a means of instructing computers to carry out a sequence of computations. High-level programming languages like Python allow programmers to write code that in many ways resembles natural languages like English, albeit without any of the ambiguity and verbosity inherent to natural languages. “High-level” refers to the concept of abstraction, which makes it appreciably easier to write and understand such languages as compared to their “low-level” counterparts including machine code, assembly code, and numerical machine code (at the level of 1’s and 0’s).</p>
+					<p>There are many high-level programming languages. Each has its own vocabulary or grammar (set of strings or symbols) and syntax (the allowable combinations of these strings or symbols).</p>
+					<p>Fortran was the first high-level programming language -- it was developed by John Backus in the 1950’s while he worked at IBM. Backus is also credited with the creation of Backus-Naur form, which is a notation technique for describing the syntax rules of any language in a very clear and concise way.</p>
+				</div>
+				<div class="topic">
+				    <h2>Interpreters and Compilers</h2>
+					<p>Due to their high-level nature, languages like Python are intended to be run as input to a separate program called an interpreter, or sometimes a compiler in the case of various other languages; both interpreters and compilers are basically programs which translate high-level code into low-level code which a computer’s central processing unit can actually understand.  I’m guessing you’d have to be pretty smart to create a new programming language -- and that much of the work involves developing a powerful interpreter or compiler. The main difference between interpreters and compilers, as I understand from this lesson, is that interpreters allow programs to run “on-the-fly,” while compilers must first compile a program before it is run. But I’m sure this is a simplistic understanding, and that each programming language has its advantages and disadvantages.</p>
+				</div>
+				<div class="topic">
+				    <h2>Python</h2>
+					<p>Python is the programming language we are using in this course. The name comes from “Monty Python.” Python is an interpreted language (meaning it runs through an interpreter). I remember reading somewhere that Python is the main scripting language at Google.</p>
+				</div>
+				<div class="topic">
+				    <h2>Debugging</h2>
+					<p>System for finding and fixing programming mistakes. Reviewing code, predicting what it will do (and/or maybe what it is intended to do), and if it will work or not. Run the program. If you get an error, try to decipher the error and fix the code accordingly. Then run program again, repeating the above process.</p>
+				</div>
+			</div>
+    	<br/><!-- spacer -->
+			<div class="lesson">
+			    <h1>Lesson 2.2: Variables and Strings</h1>
+				<div class="topic">
+					<h2>Variables</h2>
+					<p>A variable is a name that refers to an expression. An expression can be many things, including any combination of values, strings, and other variables -- one can imagine variables are infinitely useful and common in serious computer programs. A variable is also something that can vary. That is to say that a variable can be made to refer to a different expression than its original assignment, and then to any number of other expressions, in turn. Or, a variable may be assigned to an expression that contains any number of other variables, which themselves can change. Variables are important because they can be used to store just about any data imagineable, and they also make code a lot easier to read when used effectively.</p>
+				</div>
+			    <div class="topic">
+					<h2>How to Create a Variable in Python</h2>
+				    <p>You can make a new variable with an assignment statement, as follows:</p>
+				    <pre>
+<span class="inline_code"><code>name = expression</code></span>
+				    </pre>
+				    <p>Note that the <span class="inline_code">=</span> in the above assignment statement means something fundamentally different than an “=” sign in an algebraic equation. In math <span class="inline_code">=</span> means equality; in Python, it means take the expression on the right side of the statement and store it in the variable name on the left.</p>
+			    </div>
+			    <div class="topic">
+					<h2>What is a String</h2>
+				    <p>A string is a sequence of characters surrounded by single <span class="inline_code">'</span>or double quotation <span class="inline_code">"</span>. Characters include any valid characters such as letters or numerals, and also special characters such as quotation marks.</p>
+				    <p>Triple quotations <span class="inline_code">"""</span> or <span class="inline_code">'''</span> are used when a string spanning multiple lines is desired</p>
+			    </div>
+			    <div class="topic">
+					<h2>Concatenation</h2>
+				    <p>The <span class="inline_code">+</span> (addition) operator is used in Python to concatenate (or link together) strings. If used with numbers, the <span class="inline_code">+</span> operator assumes its expected mathematical function, giving a sum. Numbers and strings can’t be added together -- this is a semantic error in Python, meaning it just defies logic to try to do this. For some reason, though, the <span class="inline_code">*</span> (multiplication) operator duplicates and concatenates a string with itself n times, where n is the multiple of the string. To me, this really doesn’t make intuitive sense at all, but I suppose this could be a useful shortcut in certain scenarios and definitely seems important to be aware of for learning Python. An example of this behavior: <span class="inline_code">print “8” * 3</span> results in <span class="inline_code">888</span></p>
+			    </div>
+			    <div class="topic">
+					<h2>Indexing Strings</h2>
+				    <p>Indexing is used to return a one character string from an existing string. The characters in a string are automatically enumerated, where the 0th character is actually the first character of the string. For example, to print the first character of any string, one can use the following Python code:</p>
+				    <pre>
+<span class="inline_code"><code>print “this is a string”[0] --> t</code></span>
+				    </pre>
+				    <p>Note that the <span class="inline_code">[0]</span> in the above statement can be replaced with any expression, not just with a number.</p>
+				    <p>To return characters starting from the end of the string, negative values can be used within the brackets, where <span class="inline_code">[-1]</span> returns the last character, <span class="inline_code">[-2]</span> the second-to-last, etc.</p>
+			    </div>
+			    <div class="topic">
+					<h2>Indexing Sub-Sequences from Strings</h2>
+				    <p>This is conceptually similar to indexing strings, however this method can result in strings containing more than one character. Here is how this looks in Python:</p> 
+				    <pre>
+<span class="inline_code"><code>&lt;string>[&lt;expression> : &lt;expression>]</code></span>
+				    </pre>
+				    <p>Where the first <span class="inline_code">&lt;expression>:</span> is the start index, and the second <span class="inline_code">:&lt;expression></span> is the end index.
+			    </div>
+			    <div class="topic">
+					<h2>The Find Method</h2>
+				    <p>Find is a built in Python operation that returns a value based on whether or not it finds a specified target string within a search string.</p>  
+				    <pre>
+<span class="inline_code"><code>&lt;string>.find(&lt;string>) → number (index position)</code></span> 
+				    </pre>
+				    <p>Where the <span class="inline_code">&lt;string></span> in the parenthesis is the first argument to Find.</p>
+				    <p>If the target string is found within the search string, Find will return the index number where the target string starts. If the target string is not found, <span class="inline_code">-1</span> is returned.</p>
+				    <p>Find also takes a number as a second argument, indicating at what index position of the search string it will start looking for the target string.</p>
+				    <pre>
+<span class="inline_code"><code>&lt;string>.find(&lt;string>,&lt;number>)</code></span>
+				    </pre>
+			    </div>
+			</div>
+    	<br/><!-- spacer -->
+    		<div class="lesson">
+			    <h1>Lesson 2.3: Input → Function → Output</h1>
+			    <div class="topic">
+					<h2>Functions / Procedures</h2>
+				    <p>A function is a piece of code that does something with inputs. Most functions include a return statement which allows the function to output a value.
+				    <p>Making a function in Python involves writing code in the basic format below:</p>
+				    <pre>
+<span class="inline_code"><code>def &lt;function>(&lt;input>,&lt;input>,...):
+	return &lt;output></code></span>
+				   	</pre>
+				   	<p>Where the programmer specifies the name of the function, the names of the inputs (these can be thought of like declaration statements for input values yet unknown), and the return statement output.</p>
+			    </div>
+			    <div class="topic">
+					<h2>Making Versus Using Functions</h2>
+				    <p>Using a function involves calling the function, perhaps by using the print statement or by calling the function inside of another function, and giving it actual input values. The code for the print example might take the form:</p>
+				    <pre>
+<span class="inline_code"><code>print &lt;function>(&lt;input>,&lt;input>)</code></span>
+				    </pre>
+				    <p>Where actual input values are provided (of types, ranges, etc. that are expected by the function). When the above line of code is executed, if the function works as intended then some value should be displayed.</p>
+			    </div>
+			    <div class="topic">
+					<h2>Functions Help Programmers Avoid Repetition</h2>
+				    <p>Functions are great for avoiding repetition, because a programmer can just call a function by it’s name over and over again without needing to duplicate any of the underlying code.</p>
+			    </div>
+			    <div class="topic">
+					<h2>What if There is No Return Statement?</h2>
+				    <p>If a function doesn’t have a return statement, then it basically does nothing (even though it is technically still a function, and the computer may still waste resources performing the function’s instructions).</p>
+			    </div>
+			</div>
+    	<br/><!-- spacer -->
+    		<div class="lesson">
+			    <h1>Lesson 2.4: Decisions and Repetition: If and While</h1>
+				<div class="topic">
+					<h2>What the Heck is a Boolean?</h2>
+					<p>A boolean is a built in a data type in Python (and in virtually every other programming language, from what I’ve seen) including the values <span class="inline_code">True</span> and <span class="inline_code">False</span>. True is equal to the integer value 1, and False is equal to 0.</p>
+				</div>
+			    <div class="topic">
+					<h2>Conditional Code</h2>
+					<div class="sub_topic">
+						<h3>If Statements</h3>
+						<p>If statements are used to control when a block of code is executed. An if statement in Python takes the basic form:</p> 
+		             	<pre>
+<span class="inline_code"><code>if &lt;test_expression>:
+	&lt;code_block></code></span>
+						</pre>
+						<p>Where the code represented by <span class="inline_code">&lt;code_block></span> is only executed when the <span class="inline_code">if&lt;test_expression></span> code evaluates to True.</p>
+				    </div>
+				    <div class="sub_topic">
+						<h3>While Loops</h3>
+					    <p>While loops are used for repeatedly executing a block of code. In Python, while loops take the form:</p> 
+					    <pre>
+<span class="inline_code"><code>while &lt;test_expression>:
+	&lt;code_block></code></span>
+						</pre>
+						<p>Where the code represented by <span class="inline_code">&lt;code_block></span> is only executed when the <span class="inline_code">while &lt;test_expression></span> expression is True.</p>
+						<p>Loops can be broken with a <span class="inline_code">break</span> statement, which instructs the computer to execute the next line of code even if the <span class="inline_code">while</span> test expression is still True. </p>
+				    </div>
+				    <div class="sub_topic">
+						<h3>Else Statements</h3>
+					    <p>An <span class="inline_code">else:</span> statement is used for executing a block of code in the instance that a preceding conditional expression (like <span class="inline_code">if</span> or <span class="inline_code">while</span>) evaluates to False.</p>
+				    </div>
+				    <div class="sub_topic">
+						<h3>Equity comparisons</h3>
+					    <p>Mathematical equity comparison operators, such as <span class="inline_code">&lt;</span> (less than), <span class="inline_code">></span> (greater than), <span class="inline_code">&lt;=</span> (less than or equal to), <span class="inline_code">!=</span> (not equal), and <span class="inline_code">==</span> (equality) operate on numbers (or expressions that evaluate to numbers) and output a boolean value. It should be noted that the equality operator <span class="inline_code">==</span> is different than the assignment operator <span class="inline_code">=</span> in python. <span class="inline_code">==</span> is used literally to test for equality -- that is whether two expressions evaluate to the same number (i.e. <span class="inline_code">2 == (1+1) → True</span>); whereas <span class="inline_code">=</span> is used to assign a variable name to any expression (i.e. <span class="inline_code">two = 3</span>).</p>
+				    </div>
+				    <div class="sub_topic">
+						<h3>Other constructs: Or and And:</h3>
+					    <p><span class="inline_code">or</span> allows a conditional statement to evaluate to True when at least one of its test expressions is True.</p>
+					    <p>Combining boolean values with an <span class="inline_code">or</span> operator results in the following values ("Boolean Or"). I believe the below logic is also called a “truth table:"</p>
+				    	<ol class="list_bullets">
+				    		<li><span class="inline_code">True or False → True</span></li> 
+				    		<li><span class="inline_code">False or True → True</span></li> 
+				    		<li><span class="inline_code">True or True → True</span></li> 
+				    		<li><span class="inline_code">False or False → False</span></li>
+				    	</ol>
+					    <p>The way Python deals with <span class="inline_code">or</span> statements is that if the first expression is True, the entire conditional statement evaluates to True and the second expression is not even evaluated. This is important because the entire expression is True even if the second expression represents an undefined variable, or some expression that would otherwise result in an error.</p><p>On the other hand, if the first expression is False, then the value of the entire conditional statement is the value of the second expression. In this latter case, it is possible to encounter an error if the second expression includes some undefined variable or out-of-range value, etc.</p>
+					    <p>The <span class="inline_code">and</span> operator is used in a syntactically similar fashion to <span class="inline_code">or</span>, except that <span class="inline_code">and</span> allows a conditional statement to evaluate to True only when all of its test expressions are True. The behavior of combining boolean values with an <span class="inline_code">and</span> operator is as follows:</p> 
+				    	<ol class="list_bullets">
+				    		<li><span class="inline_code">True and False → False</span></li> 
+				    		<li><span class="inline_code">False and True → False</span></li>  
+				    		<li><span class="inline_code">True and True → True</span></li>  
+				    		<li><span class="inline_code">False and False → False</span></li> 
+				    	</ol>
+				    </div>
+			    </div>
+			    <div class="topic">
+			    	<h2>Alan Turing (1912-1954)</h2>
+			    	<p>Alan Turing was a British mathemetician, famous for his work during World War II when he designed computers that decyphered messages sent by the Nazi Enigma Machines.</p> 
+			    	<span class="centered_content">
+				  		<span class="graphic">
+					 		<img src="images/turing.jpg" alt="Alan Turing">
+				  		</span>
+					</span>
+					<p>A few years prior to this, Turing invented the very idea of computers. In a paper published in 1936, Turing describes a theoretical computing machine with infinite memory called a <em>Turing machine</em>, and hypothesizes that Turing Machines can compute basically any imaginable function (there seems to be a bit more technicality to this, from the online articles I've skimmed, but I'll stick to this explanation for now...). Turing machines are the precursor to modern computers &amp; also provide a way of describing the limits of computers and programming languages. A programming language, such as Python, is said to be &quot;Turing complete&quot; if it can be used to simulate the behavior of a Turing machine. Alan Turing is recognized by many as the founder of computer science.</p>
+			    </div>
+			</div>
+    	<br/><!-- spacer -->
+			<div class="lesson">
+				<h1>Lesson 2.5: Structured Data: Lists and For Loops</h1>
+			    <div class="topic">
+					<h2>What is a List?</h2>
+				    <p>A list provides a way of storing mutable structured data. A list in Python is can be written as follows:</p>
+			    	<pre>
+<span class="inline_code"><code>[‘item1’, ‘item2’, ‘item3’]</code></span>
+			    	</pre>
+				    <p>Note that the any of the list contents above, like the string <span class="inline_code">‘item1’</span>, can be replaced with expressions of any other type -- numbers, booleans, expressions, or other lists. The list contents above would also be assigned index values <span class="inline_code">[0]</span>, <span class="inline_code">[1]</span>, and <span class="inline_code">[2]</span> -- this works in an analogous way to indexing with strings. However, it is important to realize that strings are different in that they are sequences of characters, and cannot include other data types. Strings are also immutable, as explained below.</p>
+			    </div>
+			    <div class="topic">
+					<h2>What is Mutability?</h2>
+					<p>Mutability refers to whether or not an object’s value can be changed.</p>
+			    	<div class="sub_topic">
+						<h3>Immutable Objects: Strings and Numbers</h3>
+				    	<p>Strings and numbers are immutable objects, meaning that their values cannot be changed. Take the code below, for example:
+				    	<pre>
+<span class="inline_code"><code>p = 45
+q = 45
+print p → 45
+p = 50
+print p → 50
+print q → 45</code></span>
+				    	</pre>
+				    	<p>In the above example, we first assign the variables <span class="inline_code">p</span> and <span class="inline_code">q</span> to the number <span class="inline_code">45</span>. When we re-assign the variable <span class="inline_code">p</span> to the number <span class="inline_code">50</span>, this does not change the value <span class="inline_code">45</span>; it only makes the variable <span class="inline_code">p</span> refer to a different number. The number <span class="inline_code">45</span> still exists, as we can see with the statement <span class="inline_code">print q → 45</span>. The same would be true had we assigned these variables to random strings. All numbers exist and can be referred to via variables; likewise, all imaginable combinations of characters exist and can be referred to via variables.</p>
+			    	</div>
+				    <div class="sub_topic">
+						<h3>Mutable Objects: Lists</h3>
+					    <p>Lists are mutable objects, meaning that their values can be changed. For example, in Python the built in <span class="inline_code">append</span> operation mutates an existing list by adding elements to that list:</p>
+				    	<pre>
+<span class="inline_code"><code>&lt;list>.append(&lt;element>)</code></span>  
+				    	</pre>
+					    <p>Using this format, expression in <span class="inline_code">&lt;element></span> becomes the <span class="inline_code">[n]</span>th index of of a list of length <span class="inline_code">n</span>, or the <span class="inline_code">[0]</span>th index of a previously empty list (<span class="inline_code">[]</span>). If the <span class="inline_code">&lt;element></span> being appended is itself another list (or a variable that refers to a list), this still only appends a single element containing the list.</p>
+					    <p>Another way of mutating a list would be to use code such as the following:</p>
+				    	<pre>  
+<span class="inline_code"><code>test_list = [‘h’,‘e’,‘l’,‘l’,‘o’]
+test_list[0] = ‘Y’
+print test_list → [‘Y’,‘e’,‘l’,‘l’,‘o’]  </code></span>
+				    	</pre>
+					    <p>The above behavior in fact changes the actual list which the variable <span class="inline_code">test_list</span> refers to.</p>
+				    </div>
+			    </div>
+			    <div class="topic">
+					<h2>Aliasing</h2>
+				    <p>Aliasing happens when more than one variable refers to the same object. As in the below code:</p>
+			    	<pre>  
+<span class="inline_code"><code> x = 27
+y = x
+print x → 27
+print y → 27</code></span>
+			    	</pre>
+			    </div>
+			    <div class="topic">
+					<h2>Concatenation with Lists</h2>
+				    <p>In contrast to the above examples which feature mutation of lists, in order to concatenate an object to a list (with the <span class="inline_code">+</span> operator), one could use the following code:</p>
+			    	<pre>  
+<span class="inline_code"><code>test_list = [‘Y’,‘e’,‘l’,‘l’,‘o’]
+new_list = test_list + [‘w’]
+print test_list → [‘Y’,‘e’,‘l’,‘l’,‘o’]
+print new_list → [‘Y’,‘e’,‘l’,‘l’,‘o’,‘w’]</code></span>
+				    </pre>
+					<p>Concatenation does not mutate the original list; rather, it creates a new list.</p>
+					<p>We could also have concatenated a list to the original list, rather than a single character. Unlike using <span class="inline_code">append</span> to add a list to another list, which adds a single list element containing the appended list, concatenation adds each of the elements contained in the list being added to their own index. For example:</p>
+					<pre>  
+<span class="inline_code"><code>list_one = [1,2,3]
+list_two = list_one + [4,5,6]
+print list_two → [1,2,3,4,5,6]
+print len(list_two) → 6 </code></span>
+				    </pre>
+					<p>whereas:</p>
+					<pre>  
+<span class="inline_code"><code>list_three = [10,9,8]
+list_three.append([7,6,5])
+print list_three → [10,9,8,[7,6,5]]
+print len(list_three) → 4</code></span>
+				    </pre>
+					<p>As a side note to the concatenation example above, if one actually wanted to change the value that the original variable refers to, this is possible with the <span class="inline_code">+=</span> operator, as in the following code:</p>
+					<pre>  
+<span class="inline_code"><code>list_one = [1,2,3]
+list_one += [4,5,6]
+print list_one → [1,2,3,4,5,6]</code></span>
+				    </pre>
+					<p>The second statement above is really the same thing as <span class="inline_code">list_one = list_one + [4,5,6]</span>, which involves the concatenation <span class="inline_code">+</span> operator. For this reason, we are still creating a new list &amp; at the same time reassigning the original variable to that new list -- this is different from performing mutation.</p>
+			    </div>
+			    <div class="topic">
+					<h2>For Loops</h2>
+				    <p>A <span class="inline_code">for</span> loop is a construct that allows a block of code to iterate over structured data, including the contents of a list, one element at a time. The below function, which incorporates a <span class="inline_code">for</span> loop, returns the sum of any list of numbers:</p>
+			    	<pre>
+<span class="inline_code"><code>def sum_list(any_num_list):
+	total_so_far = 0
+	for next_element in any_num_list:
+		total_so_far = total_so_far + next_element
+		return total_so_far
+				    		
+print sum_list([1,2,3,4,5]) → 15</code></span>
+		`			</pre>
+			    </div>
+			</div>
+    	<br/><!-- spacer -->
+    	<div>
+			<h1 class="course_title_h1">Stage 3: The Power of OOP</h1>
+		</div>
+	<br/> <!-- spacer -->
+    		<div class="lesson">
+                <h1>Lesson 3.1: Using  Functions and Modules</h1>
+                <div class="topic">
+                    <h2>Python’s Standard Library</h2>
+                    <p>Python comes with a Standard Library consisting of several built-in functions and many modules.</p> 
+                    <p>The benefit of using a language like Python which is distributed with a robust library is that a programmer can start building useful apps immediately without getting bogged down with coding programs from the lowest level of abstraction up -- a process which essentially would involve building a standard library of one’s own. However, I can imagine that much of Python’s standard library came into being in much this way, through the work of many programmers over the last several years, as the language has grown in popularity.</p>
+                    <p>Python's Standard Library offers a toolbox of ready-to-use abstractions in the form of modules and built-in functions; in a similar way, HTML offers abstracted tools in the form of pre-defined elements. (After drawing this connection, I also wondered whether it is possible to define custom HTML tags -- I looked into this &amp; it turns out this is totally possible. Just as we can create new functions and modules in languages like Python, we can define new HTML tags -- although this technique is strongly discouraged in HTML).</p>
+                </div>
+                <div class="topic">
+                    <h2>Built-in Functions</h2>
+                    <p>Built-in functions provide programmers with abstracted functions for common programming tasks, like returning the length of an object (<span class="inline_code">len()</span>), or returning the absolute value of a number (<span class="inline_code">abs()</span>).</p> 
+                    <p>To use a built-in function, like open() for opening a file, one can simply type the function:</p> 
+                    <pre>
+<span class="inline_code"><code>open(“&lt;file_location>”)</code></span>
+                    </pre>
+                </div>
+                <div class="topic">
+                    <h2>Modules</h2>
+                    <p>The available modules provide platform-independent access to system functions like generating graphics on screen (<span class="inline_code">turtle</span>), or accessing websites (<span class="inline_code">webbrowser</span>). This is a bit of a generalization, as there are also modules that deal with OS-specific functions (Windows, Unix, Mac OS), and more unique utilities like a pseudo-random number generator (<span class="inline_code">random</span>).</p>
+                    <p>Although HTML and CSS do not have "modules" in this same sense, it can be helpful to think of the available abstractions of these languages as being organized within certain groups -- like distinguishing between "metadata" elements (like <span class="inline_code">&lt;head></span>) and "container" elements (like <span class="inline_code">&lt;div></span>). Indeed, when we look at the Mozilla HTML Reference, the elements are categorized in such a way.</p>
+                </div>
+                <div class="topic">
+                    <h2>Importing Modules</h2>
+                    <p>A module has to be imported before a program can use the classes and functions of that module. An import statement should be written at the top of a program as follows:</p>
+                    <pre>
+<span class="inline_code"><code>import turtle</code></span>
+                    </pre>
+                    <p>To import a only part of a module, like a certain function or class, one can use the ##from keyword in the following syntax:</p>
+                    <pre>
+<span class="inline_code"><code>from &lt;module> import &lt;Class_name></code></span>
+                    </pre>
+                    <p>We can also import our own modules and classes with the import keyword. In the Movie Website example we looked at in Course 3, we imported class <span class="inline_code">Movie</span>using the code below (the class definition was found in a file called <span class="inline_code">media.py</span>). This example also assumes that both files (<span class="inline_code">media.py</span> and whatever file we are importing that module to) reside in the same directory:</p> 
+                    <pre>
+<span class="inline_code"><code>import media</code></span>
+                    </pre>
+                    <p>Below is a video showing a program in which I imported the <span class="inline_code">os</span> module read and rename files for decoding a secret message for my daughter.<br/></p>
+                    <span class="centered_content">
+                    	<span class="graphic">
+                    		<iframe width="555" height="331" src="https://www.youtube.com/embed/4X3n5cIfICI" allowfullscreen></iframe>
+                    	</span>
+                    </span>
+                    <p>In the following video my daughter listens as I explain my version the "Take a Break" program that was demonstrated in the course.<br/></p>
+                    <span class="centered_content">
+                    	<span class="graphic">
+                    		<iframe width="555" height="331" src="https://www.youtube.com/embed/9iFHFGsB4bI" allowfullscreen></iframe>
+                    	</span>
+                    </span>
+                </div>
+                <div class="topic">
+                    <h2>Abstraction</h2>
+                    <p>Abstraction is the hiding of detail. We don’t necessarily need to understand how a module (or a built-in function) works at a low level in order to use it or experiment with it, so long as we carefully read the module’s documentation. Documentation for the Python Standard Library can be found at <a href="https://docs.python.org/2.7/">docs.python.org.</a></p>
+                    <p>In addition to the official documentation, resourceful programmers will also use Google (or other search tools) and programming community websites like stackoverflow.com to overcome coding questions and roadblocks.</p>
+                    <p>Abstraction, relating to readily-available code, is obviously beneficial as it spares programmers the time they would otherwise have spent writing similar code. When we reuse code, we are leveraging other programmers’ time investments and hard work by implementing their working code in new applications (or perhaps we may also be improving upon their preexisting code). When I write programs, I will assume that my code will be read and reused by other programmers &amp; I will strive to create useful and easy-to-understand abstractions.</p>
+                    <p>HTML is not an object-oriented language like Python -- in fact, it's really not a <em>programming language</em> in the same sense at all, since it is just plain text with "markups" indicating structure and font properties. However, I think it helps to consider HTML to be sort of like a (very) high-level programming language that is <em>interpreted</em> by a web browser (this is similar to how Python actually runs through another program called an <em>interpreter</em>). A web browser is like an <em>interpreter</em> that specializes in HTML documents. Also, web browsers themselves, like the available interpreters for Python, must be written in object-oriented programming languages like C++, or Java.</p>
+                </div>
+                <div class="topic">
+                    <h2>Exceptions</h2>
+                    <p>In Python, <em>exceptions</em> are errors that are detected during the execution of code that is otherwise syntactically correct. Exceptions can occur for many reasons, and there are several "built-in" exception types in Python. The following is an example of an error message for a <span class="inline_code">TypeError</span> exception:</p>
+                    <pre>
+<span class="inline_code"><code>5 + "five"
+
+Traceback (most recent call last):
+	File "&lt;pyshell#4>", line 2, in &lt;module>
+TypeError: unsupported operand type(s) for +: 'int' and 'str'</code></span>
+                    </pre>
+                    <p>Generally speaking, an exception describes the situation where, during the execution of code, the Python interpreter encounters some expression or instruction that it doesn’t understand. From what I’ve looked at, it seems that there are ways to handle exceptions that avoid the disruption of an executing program -- however, in other cases Python does terminate the program &amp; displays an error message. Error messages, like the one above, provide valuable information for programmers, and Python is also helpful in that the location of the error often gets highlighted in the scripting window.</p> 
+                </div>
+                <div class="topic">
+                    <h2>Planning Ahead</h2>
+                    <p>Before coding a new program or function, it is a good practice to write down what steps (ideally the fewest possible steps) which your program might take to return a desired output or execute a particular action.</p> 
+                    <p>Our instructor Kunal prompted us to do this for each of the example projects.</p>
+                </div>
+                </div>
+            <br/><!-- spacer -->
+            <div class="lesson">
+                <h1>Lesson 3.2: Working with Classes and Objects</h1>
+                <div class="topic">
+                    <h2>Python Classes</h2>
+                    <p>A class is like a blueprint for creating objects. To describe how this works in more detail, a class is a block of code including a <em>constructor</em> which defines how an object or instance of that class will be created and what variables it will have, and also functions (referred to as <em>methods</em> in this context) defining the available behaviors of objects of that class. A class definition is like a blueprint; the class definition code serves as a model and does not really do anything -- it is only when an object of that class is initialized that any functions of a class actually get used.</p>
+                    <p>When functional programming alone does not provide the most elegant solution to a problem, a programmer may also consider using classes -- especially when the program in question (or parts therein) can naturally be conceptualized as an “object” of some kind. This approach to programming is referred to as <em>Object Oriented Programming</em>. By grouping together logically-related behaviors and attributes in the form of classes, we can neatly reduce multiple lines of code to a single descriptive name which is both easily understood &amp; immediately reusable throughout the rest of our code.</p> 
+                    <p>Object oriented programming provides a useful approach to refactoring procedural code, i.e. reworking code that contains only functions into code that makes use of classes. More importantly, "object oriented thinking" can be performed at the very outset of preparing to solve a problem -- for example, it may be the case that the most essential “steps” involved in solving a problem may be thought of in terms of each being their own class. By the most essential “steps,” I’m referring to the top-level, easiest to conceptualize steps and not necessarily finer details which may equate more appropriately to class methods.  Another example might be a program that must offer many “features” -- each “feature” might be packaged into its own class, which itself might contain many methods and perhaps subclasses describing in finer detail the available behaviors of each feature category. I can imagine many other ways to think about programs as being a grouping of constituent parts. Object oriented programming at the initial stages of coding a new program may also involve writing high-level pseudocode describing a simple and organized approach to the task at hand.</p>
+                    <p>Most if not all of the Python Standard Library modules contain classes that are ready to use. The first letter of a class name is always capitalized:
+                    <pre>
+<span class="inline_code"><code>frederick = turtle.Turtle()</code></span>
+                    </pre>
+                    <p><span class="inline_code">Turtle</span> above is a class contained in the turtle module. As it was explained in the course, the module <span class="inline_code">turtle</span> represents a folder in the Python Standard Library, and inside that folder there is a file which contains a class definition called <span class="inline_code">class Turtle()</span>. Class <span class="inline_code">turtle.Turtle()</span> definition contains methods that allow users to draw shapes on a window (it’s fun!).</p>
+                    <p>For some classes, arguments for the instance variables of the class must be provided inside of the elipses <span class="inline_code">()</span>, but it doesn’t seem like <span class="inline_code">Turtle()</span> requires this. I did look up the code for <span class="inline_code">class Turtle(object):</span> found in <span class="inline_code">PythonTurtle</span> on GitHub (I’m actually not sure if this is the same code as <span class="inline_code">class Turtle()</span> in the Python distribution which I’m using -- but my guess is <span class="inline_code">PythonTurtle</span> uses very similar code) -- it looks like inside of the __init__ function in the class definition of <span class="inline_code">Turtle()</span> does have instance variables, but that each instance variable is assigned a default value (like <span class="inline_code">self.color = "red"</span>).</p>
+                </div>
+                <div class="topic">
+                    <h2>Instances or Objects</h2>
+                    <p>When a new instance of a class is created, the <span class="inline_code">__init__()</span> function (constructor) defined inside of the class initializes new space in memory for the object (or instance) of that class to run. As opposed to the class definition code, an object generally does something with data and returns some outputs. It is up to the programmer to specify which of the available functions of a class are used and how.</p>
+                    <p>The below code demonstrates how to initialize an instance of class <span class="inline_code">turtle.Turtle()</span>, which we will call <span class="inline_code">remus</span>:</p>
+                    <pre>
+<span class="inline_code"><code>remus = turtle.Turtle()</code></span>
+                    </pre>
+                    <p>Following this line of code, we can then assign values to any of the instance variables (or override the default values in the case of <span class="inline_code">Turtle()</span>), and also we can make our instance perform any of the methods of its class:</p>
+                    <pre>
+<span class="inline_code"><code>remus.forward(200)      # remus draws a line of 200 pixels in current orientation
+remus.right(90)      # rotate remus orientation 90 degrees to the right</code></span>
+                    </pre>
+                    <p>I came up with this analogy for classes and objects, which maybe isn’t the simplest analogy -- but I like it:</p>
+                    	<ol class="list_bullets">
+                    		<li><b>Class</b> = the rules of standard music notation.</li>
+                   			<li><b>Object</b> = a musical composition (in the form of sheet music) making proper use of the rules of standard music notation.</li>
+                   		</ol> 
+                    <p>Perhaps a simpler, but still musical analogy, could be the following:</p>
+                    	<ol class="list_bullets">
+                    		<li><b>Class</b> = musical instrument</li>
+                    		<li><b>Object</b>  = tenor saxophone</li>
+                    	</ol>
+                </div>
+                <div class="topic">
+                    <h2>Good Naming Practices</h2>
+                    <p>Programmers should carefully consider what names they give to classes, functions, and variables. To start with, the name of any object should describe its purpose as clearly as possible. As we change or add to our programs, it is good idea to review existing names &amp; make any changes needed.</p> 
+                    <p>Names should not contain or resemble any of Python’s reserved functions or keywords, like “init” or “def,” and also should not begin or end with double underscores “__” as this is used to signify reserved Python functions. There are other considerations that I can think of, like choosing names which are searchable and at least somewhat pronounceable (and I’m sure there are many other considerations that I am not yet aware of). Putting care into what names we use makes our code more readable and usable, both for ourselves and others who might happen upon our code.</p>
+                </div>
+                <div class="topic">
+                    <h2>External Packages / Modules</h2>
+                    <p>While the Python Standard Library is extensive, there are also thousands of external Python packages which we can download and use. Some are free, some are commercial. An example external module discussed in the course was Twilio, which offers utilities for sending and receiving SMS messages. From their website it looks like they offer a lot of other cool communications APIs like for voice calls and multimedia messages (picture messaging).</p>
+                </div>
+                <div class="topic">
+                    <h2>The Class-Like Nature of Built-In “Functions”</h2>
+                    <p>It is true that the syntax of built-in functions like <span class="inline_code">current_file = open(file)</span> resembles the syntax of calling a straightforward function (<span class="inline_code">some_value = some_function(object)</span>). However, behind the scenes the <span class="inline_code">open()</span> built-in function initializes an object of <em>type</em> <span class="inline_code">File</span>, which we have named <span class="inline_code">current_file</span>. After doing this, we can perform certain methods on the object <span class="inline_code">current_file</span>, like <span class="inline_code">current_file.read</span> to return the contents of that object (<span class="inline_code">read</span> is a method of the built-in function <span class="inline_code">read()</span>). This behavior is similar to what happens when we initialize an instance of any class &amp; then have the object perform any of the available methods of that class. Many of Python’s other built-in “functions” create objects of various types, and can be thought of in much the same way as classes.</p>
+                </div>
+                </div>
+            <br/><!-- spacer -->
+            <div class="lesson">
+                <h1>Lesson 3.3: Writing Our Own Classes</h1>
+                <div class="topic">
+                    <h2>Designing a New Class</h2>
+                    <p>When preparing to code a new class definition, it is a good practice to make note of what instance variables and instance methods we will need for the class. For the class <span class="inline_code">Movie</span> example from the course, we decided this class should remember data points like <span class="inline_code">title</span>, <span class="inline_code">youtube_trailer</span>, <span class="inline_code">storyline</span>, and <span class="inline_code">poster_image</span>. These are examples of instance variables. We also decided that class <span class="inline_code">Movie</span> should define an instance method for showing the movie trailer, called <span class="inline_code">show_trailer()</span>.</p>
+                    <p>When we create a new class in Python, any new instances of that class will be able to use the attributes and methods of that class. This behavior is comparable to what happens in web design when we declare a new CSS class -- all of the stylistic rules (analogous to Python class attributes &amp; methods) defined in the CSS declaration will be applied to HTML elements of that CSS class (analagous to Python instances of a class).</p>
+                </div>
+                <div class="topic">
+                    <h2>Creating a New Class</h2>
+                    <p>To define the class <span class="inline_code">Movie</span>, as described above, we start with the Python keyword <span class="inline_code">class</span>:</p>
+                    <pre>
+<span class="inline_code"><code>class Movie():</code></span>
+                    </pre>
+                    <p>We then continue with our class definition by adding a constructor which will allow new instances of the class <span class="inline_code">Movie</span> to operate in memory; in this case we will define an <span class="inline_code">__init__()</span> function which will serve as the constructor:</p>
+                	<pre>		
+<span class="inline_code"><code>class Movie():
+	def __init__():</code></span>
+                	</pre>
+                    <p>For the constructor’s first argument, it is a strong convention in Python to use the variable name <span class="inline_code">self</span>. Self (or another name like <span class="inline_code">movie_instance</span>, as the case may be) can be thought of as the object or instance being created by the constructor. We are given the impression in the course that the name <span class="inline_code">self</span> is used so commonly in Python class definitions that it is often mistakenly considered to be a predefined keyword.</p>
+                    	<pre>
+<span class="inline_code"><code>class Movie():
+    def __init__(self):</code></span>
+                    	</pre>
+                    <p>We continue defining the constructor method by adding <em>instance variables</em>, which describe some of the data attributes which may be defined for instances of the class (or the "things to remember," as described by the course instructor):</p>
+                    	<pre>
+<span class="inline_code"><code>class Movie():
+    def __init__(self):
+		self.title		
+		self.storyline
+		self.poster_image_url
+		self.trailer_youtube_url</code></span>
+                   	 	</pre>
+                   	<p>We must then define additional input arguments (inside of the ellipses, after <span class="inline_code">self</span>) whose values <span class="inline_code">__init__</span> will pass to the instance variables. We also write assignment statements to tell the <span class="inline_code">__init__</span> method which instance variable each argument gets passed to. Adding this code allows the instance variable data points to be initialized whenever a new object of the class is instantiated:</p>
+                   		<pre>
+<span class="inline_code"><code>def __init__(self, movie_title, movie_storyline, poster_image, trailer_youtube):
+	self.title = movie_title
+	self.storyline = movie_storyline
+	self.poster_image_url = poster_image
+	self.trailer_youtube_url = trailer_youtube</code></span>
+                   		</pre>
+                   	<p>Regarding the example above, while I do understand that the arguments and instance variables are separate entities, I find it slightly annoying that in this first class <span class="inline_code">Movie</span> example, they are given nearly identical, yet still slightly different variable names (consider <span class="inline_code">trailer_youtube</span> versus <span class="inline_code">trailer_youtube_url</span>).</p> 
+                   	<p>The below code demonstrates one example instance of the class <span class="inline_code">Movie</span>:</p>
+                   		<pre>
+<span class="inline_code"><code>toy_story = media.Movie(“Toy Story”,
+  	“Toys Come to Life”,
+    “http://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg”,
+    "https://www.youtube.com/watch?v=KYz2wyBy3kc")</code></span>
+                   		</pre>
+                   	<p>In the above example, the instance being initialized is named <span class="inline_code">toy_story</span> -- so, <span class="inline_code">self = toy_story</span>, in this case. The other input arguments provided in the ellipses (<span class="inline_code">“Toy Story”</span>, <span class="inline_code">“Toys Come to Life”</span>, etc.) take the place of the <span class="inline_code">__init__</span> arguments (<span class="inline_code">“movie_title”</span>, <span class="inline_code">“movie_storyline”</span>, etc.). The values of these arguments are in turn passed one-after-the-other to the appropriate instance variables -- doing this initializes each of the instance variables.</p>
+                </div>
+                <div class="topic">
+                    <h2>Adding Class Methods</h2>
+                    <p>Continuing with the above example, we can add to this class definition a method to show a movie’s trailer video:</p>
+                    	<pre>
+<span class="inline_code"><code>def show_trailer(self):
+    webbrowser.open(self.trailer_youtube_url)</code></span>
+                    	</pre>
+                    <p>Note that for the above method to work, we will also add an import statement for the <span class="inline_code">webbrowser</span> module at the beginning of the class definition:  <span class="inline_code">import webbrowser</span></p>
+                </div>
+                <div class="topic">
+                    <h2>Google Python Style Guide</h2>
+                    <p>The Google Python Style Guide provides conventions on basically every aspect of Python code, from proper naming practices to indentation. Here is a link to this website: <a href="http://google-styleguide.googlecode.com/svn/trunk/pyguide.html">http://google-styleguide.googlecode.com/svn/trunk/pyguide.html</a></p>
+                </div>
+                <div class="topic">
+                    <h2>Class Variables</h2>
+                    <p>In cases where variables should be shared by all instances of a class, we can define class variables. In our class <span class="inline_code">Movie</span> example, if we wanted to add a list of valid ratings to every instances of that class, we could add the following class variable assignment statement (this will be written below the <span class="inline_code">class Movie():</span> statement, and just above the <span class="inline_code">__init__</span> method):</p>
+                    <pre>
+<span class="inline_code"><code>VALID_RATINGS = [“G”, “PG”, “PG-13”, “R”]</code></span>
+                    </pre>
+                    <p>Google python style guide recommends using ALL CAPS for class variables.</p> 
+                    <p>In Python all classes come with some preexisting class variables. One example is the class variable for documentation <span class="inline_code">__doc__</span>.</p> 
+                    <p>Here is an example of adding documentation to class Movie:</p>
+                	<pre>
+<span class="inline_code"><code>class Movie():
+    """This class provides a way to store movie-related information"""</code></span>
+                	</pre>
+                    <p>Python will interpret the above triple-quoted string as the <span class="inline_code">__doc__</span> for class <span class="inline_code">Movie</span>. Notice that we do not need to write <span class="inline_code">__doc__</span> anywhere in the class definition code. Once the above code has been added, we can view the documentation for this class using the print statement:</p>
+                    <pre>
+<span class="inline_code"><code>print Movie.__doc__</code></span>
+                    </pre>
+                    <p>Some other examples of preexisting class variables are  <span class="inline_code">__module__</span> and  <span class="inline_code">__name__</span>.</p>
+                </div>
+                <div class="topic">
+                    <h2>Inheritance</h2>
+                    <p>Inheritance describes what happens when we create a <em>subclass</em> ("child" class) that <em>inherits</em> attributes and behaviors (i.e. class variables, instance variables, and methods) of an already existing class ("parent" class). This is conceptually similar to the idea of inheritance of visual properties in CSS -- except that in CSS inheritance is assumed to be true for any new statements/objects unless explicitly stated otherwise. In Python, there is a particular syntax, described below, for defining the child-parent relationship of classes. In both languages, inheritance offers similar benefits, in that can be used to eliminate unnecessary code (in Python, this has to do with the fact that we are reusing the parent class code), and can enhance readability.</p>
+                    <p>Here is an example involving inheritance:</p>
+                    	<pre>
+<span class="inline_code"><code>class Parent():
+    def __init__(self, last_name, eye_color):
+		self.last_name = last_name
+		self.eye_color = eye_color
+                    			
+class Child(Parent):		
+    def __init__(self, last_name, eye_color, number_of_toys): 
+        Parent.__init__(self, last_name, eye_color)
+        self.number_of_toys = number_of_toys</code></span>
+                    	</pre>
+                    <p>In order to instruct Python that subclass <span class="inline_code">Child</span> should inherit from class <span class="inline_code">Parent</span>, notice above that the name of the parent class, <span class="inline_code">Parent</span> in this case, is written inside of the ellipses. To initialize the first three instance variables of subclass Child (including ##self), we reuse the parent class code by calling the <span class="inline_code">__init__</span> method of the class <span class="inline_code">Parent</span> -- as a result we are minimizing the overall length of the subclass definition.</p>  
+                    <p>Notice that the subclass <span class="inline_code">Child</span> inherits all of the instance variables from its parent class, and that we can declare additional variables like <span class="inline_code">number_of_toys</span>, in this case. Likewise, If the definition for class <span class="inline_code">Parent</span> contained any methods, subclass <span class="inline_code">Child</span> would be able to use these methods without requiring any additional code in its definition.</p>
+                </div>
+                <div class="topic">
+                    <h2>Method Overriding</h2>
+                    <p>In the case where a subclass contains a method of the same name as a method of its parent class, the subclass method will override the parent method (when that method is called for an object of the subclass, of course). This behavior is called <em>method overriding</em>.</p>
+                    <p>When I think of method overriding in Python, I'm reminded of the overriding priority of inline CSS styles versus CSS rules that would otherwise have been inherited for an HTML element. Even though right now I don't know that much about its usage, I'm thinking that in comparison with inline CSS code (which I would generally avoid), method overriding in Python is probably a more frequently useful and sanctioned technique (although I can also imagine how this could be the source of unforseen bugs in some cases). The reason I think it's more useful is that it doesn't make sense that we should only be able to <em>augment</em> a parent class by adding instance variables and methods to a Parent class; we should also be able to conveniently <em>change</em> (or perhaps remove) existing methods for inheritence to be really powerful.</p>
+                </div>
+            </div>
+    <br/><!-- spacer -->
+		<div><a name="stage4"></a>
+			<h1 class="course_title_h1">Stage 4: Building My First Web App</h1>
+		</div>
+	<br/> 
+			<div class="lesson">
+	 		 	<h1>Stage 4 Lesson Summary</h1>
+				<div class="topic">
+		 		 	<h2>Servers in More Detail</h2>
+					<p>A server is a computer whose primary purpose is to handle and respond to HTTP requests. An example of this is when a <em>client</em> (web browser) requests data (a website or other file) from a server; the server may then respond by sending a status message (HTTP response) along with the contents of the requested object to the client. Aside from static websites and files, the requested <em>data</em> may also represent a web application in which a server dynamically generates content based on HTTP requests from a web browser or other interface.</p>
+                    <p>The most common protocol for communication between clients and servers is called HTTP, for Hyper Text Transfer Protocol. HTTP provides a language and syntax for requests and responses between computers and servers. GET requests are often used for for requesting data (like when entering a URL in the address bar of a web browser), and POST requests are often used when sending data to a server for storage or processing (like when submitting information in an HTML form). Both types of requests are followed by HTTP responses including a variety of status codes and brief reason phrases, followed by additional details about the response. As described above, a response message from a server may or may not be accompanied by some requested data (following a GET request), or the delivery of a response message may coincide with the server actually storing or doing something with data being sent to it (following a POST request); or the server may do nothing in the case that it sends an unsuccessful response.</p>
+				</div>
+				<div class="topic">
+				  	<h2>Validation of User Input</h2>
+					<p>There are several reasons that servers should validate data received by clients. One reason is site security: in order to prevent web applications and databases from being hacked, manipulated, or broken by malicious clients, servers should be able recognize bad input and deal with it appropriately. Bad data may take the form of any user input, including HTTP GET parameters in a URL or HTML form data. As a countermeasure to malicious activity, web applications should verify all data inputs on the server-side to make sure that it is of the correct type and within the constraints expected by the web application.</p>
+            		<p>An equally important reason to validate user input is to ensure a favorable user experience of web apps. For example, the payment form of an online store should check the format and length of a credit card number to ensure that it is a valid card number. Imagine what happens when a user accidentally omits a number from her credit card -- the server should be able to return the form to the user with a message to re-enter the card number (in many cases the returned form should also preserve the data previously submitted by the user, although this may not be good practice for credit card numbers). If a customer is met with a blank form or has to make a phone call to the online store to confirm that their order was received, chances are they’ll simply take their business elsewhere. The examples shown in the course involved a web form allowing users to input their birthdays. A web app that does not implement proper verification may respond with a “thank you” message even for partially invalid inputs like “Flubuary 34, 1947,” whereas a server doing proper verification should return the form to the user with an error message (or better yet, an error message specifying the invalid month and date entries).</p>
+				</div>
+				<div class="topic">
+				  	<h2>HTML Templates and Abstraction</h2>
+					<p>Templates are libraries that allow programmers to efficiently build complicated strings, most commonly HTML strings. The HTML Templating engine that we used in this course was Jinja2, which runs on Python. Jinja2 includes Python’s built in abstractions like for loops and conditional statements, as well as a simple syntax for string substitutions which we can insert directly into HTML files for rendering HTML content dynamically. HTML Templates also allow programmers to keep HTML separate from the files containing their web app code, as this is generally considered a best practice.</p>
+            		<p>For my stage 4 project, I built web app which allows visitors to post comments at the bottom of my notes page. While my page may potentially display a large number of comments (all of which will appear as separate divs when viewing the page source in a web browser), all of these entries are rendered on-the-fly with a Jinja2 for loop which is only around 10 lines of code, involving an easy-to-understand <span class="inline_code">&#123;% for comment in comments %&#125;</span> abstraction, in my HTML file.</p>
+            		<p>I’ll admit, my course notes HTML file is still lengthy…one can imagine that if I redesigned my page to implement a similar form for posting new lesson topics &amp; simply pushing my entries to Google’s Datastore, I would likely reduce my HTML file from 800+ lines of code to probably fewer than 100 lines conservatively. I haven’t implemented this yet, mainly because I’m still very new at App Engine &amp; would like to code this in a proper way -- but I definitely see the potential for eliminating redundant code and at the same time making my website functional and dynamic.</p>
+				</div>
+			</div>
+		<br/><!-- spacer -->
+		<div><a name="stage5"></a>
+			<h1 class="course_title_h1">Stage 5: Exploring Additional Topics</h1>
+		</div>
+	<br/> 
+			<div class="lesson">
+	 		 	<h1>What I Learned in Stage 5</h1>
+				<div class="topic">
+		 		 	<h2>My Attempt at Making a More Dynamic Webpage</h2>
+					<p>My first thought for my Stage 5 work was to further develop the ongoing project of this nanodegree by adding more dynamic features to my webpage. I planned to create a form where all of the contents of the webpage from new course names all the way down to subtopics would be added to the datastore and displayed dynamically. After successfully building a comments board, this seemed to be the most logical next step.</p>
+					<p>The design that I planned involved starting with a textfield to enter a new course name -- when the user submits a new course name, that content is then displayed chronologically on the webpage. Underneath each displayed course name is a new text field to enter a lesson title. When a lesson title is displayed, new text fields for a topic title and description are displayed; finally, underneath a new topic posting, a text fields for a new subtopic title and description are displayed.</p>
+					<p>I was able to get this functionality partially working to where I could create new course names and lesson titles (not demonstrated on current webpage); however, I ran into difficulty getting getting the lesson titles to be associated with the correct course title. I’m fairly sure that I need to add code to my python file involving datastore keys using ancestor paths, and I did spend quite a while reading documentation on this and trying to get everything to work…but after spending a few days with this, I decided that this might be a project better left for after I complete the nanodegree.</p>
+					<p>Also, while I may still try to master this aspect of App Engine and Datastore -- I discovered some alternatives to App Engine which I’m far more interested in exploring and mastering (namely Heroku). I also successfully used Jinja inheritance while working on this, and I learned a lot more about App Engine by reading the documentation (despite still having a very frustrating time actually employing the features that I thought I understood).</p>
+					<p>Long story short, while it seemed like completing my webpage was the most reasonable next step in my journey as a new programmer, I’ve gained a greater appreciation for how vast the field of programming is. It is impossible for me to be an expert in every area of programming, so my time is probably best spent exploring areas that are of the most interest to me rather than getting stuck in the weeds in an area that I’m not as interested in (like App Engine).</p>
+				</div>
+				<div class="topic">
+		 		 	<h2>Android Development and Additional Interests</h2>
+					<p>I realize that I probably could have put my Nanodegree to bed by just by discussing my attempt at building a fully dynamic webpage -- however, I really did want to spend some time working on new subjects that are of genuine interest to me like building mobile apps. So, I completed all of the available material in the Android Development for Beginners course (this is a great course!). I learned about creating and styling android app layouts with XML. For example, I feel I have a fairly good understanding of when to use LinearLayout versus RelativeLayout view groups for arranging items on screen. Nesting view groups in XML seemed very easy after working with HTML.</p>
+					<p>I also got to practice working with Java while building the Court Counter app (for keeping score of basketball games) example in Practice Set 2. I made it a point to attempt to write my own Java code for each step in building the functionality of the app before the instructor discussed her solutions. In pretty much every case, the code I had written was basically identical to the instructor’s solutions. Thanks to my experience working with Python throughout this nanodegree, I found the Java in the Android course to be fairly easy to work with.</p>
+					<p>I happen to personally prefer that the syntax of Java is bit more particular than that of Python. The fact that when looking at a function I can see right away what it’s scope and return type are, I think this actually makes the code clearer, in a way. I’m very interested in diving into Java. I have already enrolled in the Android Developer Nanodegree and I expect to build my Java chops (as well as becoming a proficient Android Developer) by working through this program. Also, during stage 5 I have joined a Java user meetup in Fresno, CA. During my first meeting I discovered Scala while talking with the group organizer. As I’m very interested in functional programming (I kicked off my recent exploration of serious programming after stumbling across a Haskell tutorial a few months back... it was a few days after playing around with Haskell that I signed up for my first Udacity Nanodegree), I’ve purchased book on Scala and and I’m working through Twitter’s "Scala School" tutorial, as well as a Coursera class on Functional Programming with Scala (don’t worry, I still love Udacity!). I plan to continue my Journey as a programmer by completing the Android Development Nanodgree while concurrently self-teaching Scala and functional programming. I’m very excited to keep going!</p>
+				</div>
+			</div>
+		<br/><!-- spacer -->
+            <a name="comments"></a>
+            <div class="comments">
+	            <form action="/sign" method="post">
+	            	<div>
+	            		<label for="comment">Add a Comment</label>
+	            		<a class="linktext" href="{{ url|safe }}">{{ url_linktext }}</a>
+	            	</div>
+	            	<div><p style="color: red">{{ blank_comment_error }}</p></div>
+				    <div><textarea name="comment" rows="10" cols="60"></textarea></div>
+				    <div><input type="submit" value="Share Comment"></div>
+				    <br/>
+				</form>
+				<div class="comments">
+				{% for comment in comments %}
+	      			{% if comment.author %}
+	        		 <b>{{ comment.author.email }}
+						{% if user %}
+	            			(You)
+	          			{% endif %}
+	        		 </b> wrote on {{ comment.timestamp.strftime("%m/%d/%Y at %H:%M UTC") }}:
+	      			{% else %}
+	       			 <em>Anonymous</em> wrote on {{ comment.timestamp.strftime("%m/%d/%Y at %H:%M UTC") }}:
+	      			{% endif %}
+	     	 		<div class="comment"><pre><blockquote>{{ comment.content }}</blockquote></pre></div>
+	     	 		<br/>
+	    		{% endfor %}
+				</div>
+			</div>
+		<footer>
+				<span class="centered_content">S. Neil Strain 2015</span>
+				<span class="centered_content">Contact: <a href="mailto:neilstrain@gmail.com">neilstrain at gmail dot com</a>.</span>
+		</footer>
+	</body>
+</html>

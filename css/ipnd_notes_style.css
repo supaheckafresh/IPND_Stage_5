@@ -1,0 +1,153 @@
+/*CSS file for stage1notes.html*/
+
+html {
+    min-width: 840px;
+    max-width: 1080px;
+}
+
+.page_defaults {
+	background-color: #658abf;
+    margin: 50px;
+	font-family: 'Oswald', sans-serif;
+}
+
+.course_title_h1 {
+	text-align: center;
+	font-size: 200%;
+	color: #4425e6;
+	padding: 10px;
+	margin: 1px;
+	border: 1px;
+	border-style: solid;
+	border-color: white;
+	border-radius: 20px;
+	white-space: nowrap;
+
+	/* green text highlight/strikethrough effect with multiple shadows. */
+	text-shadow: 1px 1px 4px #7df9ff, 7px 7px 20px yellow, 
+				30px 0px 10px yellow, 60px 0px 20px #eaf754,
+				100px 0px 20px #eaf754, 160px 0px 15px #eaf754, 
+				230px 0px 20px #eaf754, 300px 0px 15px #eaf754,
+				360px 0px 15px #eaf754, 440px 0px 20px yellow,
+				-1px -1px 4px #eaf754, -7px -7px 20px green,
+				-30px 0px 10px green, -60px 0px 20px #eaf754,
+				-100px 0px 20px #eaf754, -160px 0px 15px #eaf754, 
+				-230px 0px 20px #eaf754, -300px 0px 15px #eaf754,
+				-360px 0px 15px #eaf754, -440px 0px 20px yellow;
+}
+
+.lesson {
+	background-color: rgba(234,247,84,0.15);
+	padding: 14px;
+	border-radius: 25px;
+}
+
+.topic {
+	background-color: rgba(234,247,61,0.15);
+	padding: 20px;
+	border-radius: 21px;
+}
+
+.sub_topic {
+	background-color: rgba(234,247,44,0.15);
+	padding: 20px;
+	border-radius: 17px;
+	margin-left: 50px;
+	margin-right: 30px;
+	display: inline-block;
+}
+
+
+h1 {
+	font-size: 165%;
+	color: #4425e6;
+	white-space: nowrap;
+	text-shadow: 1px 1px 4px #7df9ff, 7px 7px 20px green, 
+				30px 0px 10px green, 60px 0px 20px #82f52c,
+				100px 0px 20px #82f52c, 160px 0px 15px #82f52c, 
+				230px 0px 20px #82f52c, 300px 0px 15px #82f52c,
+				360px 0px 15px #82f52c, 440px 0px 20px green;
+}
+
+h2, h3 {
+	color: #3c1bf7;
+	font-family: 'Oswald', sans-serif;	
+	text-shadow: 1px 1px 15px #82f52c, 7px 7px 40px #82f52c;
+}
+
+p {
+	color: #11083d;
+	font-family: helvetica;
+}
+
+blockquote {
+	color: #11083d;
+	font-family: helvetica;
+}
+
+.graphic { 
+	background-color: rgba(234,247,44,0.15);
+	padding: 15px;
+	border-radius: 17px;
+	display: inline-block;
+}
+
+.linktext { 
+	color: yellow;
+	background-color: rgba(234,247,44,0.15);
+	padding: 1px;
+	border-radius: 3px;
+	display: inline-block;
+}
+
+img {
+	border: 1px solid yellow;
+}
+
+.centered_content {
+	display: block;
+	text-align: center;
+}
+
+.list_numbers {
+	list-style-type: decimal;
+	color: #11083d;
+	font-family: helvetica;
+}
+
+.list_bullets {
+	list-style-type: circle;
+	color: #11083d;
+	font-family: helvetica;
+}
+
+.inline_code {
+	display: inline-block;
+	text-align: left;
+	color: #f2e56e;
+	font-family: 'lucida console'; 
+	background-color: rgba(10,22,98,0.65);
+	border-style: dashed;
+	border-width: 1px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin: 1px;
+	font-size: 90%
+}
+
+.comments {
+	background-color: rgba(44,44,200,0.12);
+	padding: 8px;
+	border-radius: 10px;
+	word-wrap: break-word;
+}
+
+.comment {
+	background-color: rgba(200,200,200,0.50);
+	margin: 5px;
+	padding: 5px;
+	padding-top: 1px;
+	border-radius: 12px;
+}

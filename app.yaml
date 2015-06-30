@@ -1,0 +1,21 @@
+application: valid-arcanum-95822
+version: 002
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /css
+  static_dir: css
+
+- url: /images
+  static_dir: images
+
+- url: /.*
+  script: ipnd_notes_comments.app
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
